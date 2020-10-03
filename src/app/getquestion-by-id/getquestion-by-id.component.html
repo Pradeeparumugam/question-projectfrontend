@@ -1,0 +1,19 @@
+<p>getquestion-by-id works!</p>
+<form #idform=ngForm (ngSubmit)="getQuestionById(idform)">
+    <div>
+        <label>QuestionID</label>
+        <input type="number" value="questionId" ngModel>
+    </div>
+<input type="submit" value="search">
+</form>
+<br>
+
+<div *ngIf="question!==undefined">
+    {{question.questionId}}
+    {{question.questionOptions}}
+    {{question.questionTitle}}
+    {{question.questionAnswer}} 
+    {{question.questionMarks}}  
+    {{question.chosenAnswer}}    
+    {{question.marksScored}}
+</div>

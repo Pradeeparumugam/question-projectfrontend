@@ -1,0 +1,9 @@
+<p>delete-question-by-id works!</p>
+<form #deleteidform=ngForm (ngSubmit)="deleteQuestionById(deleteidform)">
+    <div>
+        <label>DeleteQuestionID</label>
+        <input type="number" value="questionId" ngModel>
+    </div>
+<input type="submit" value="search" >
+</form>
+<br>
