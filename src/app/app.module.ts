@@ -9,6 +9,7 @@ import { GetquestionByIdComponent } from './getquestion-by-id/getquestion-by-id.
 import { QuestionService } from './service/questionService';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DeleteQuestionByIdComponent } from './delete-question-by-id/delete-question-by-id.component';
+import { ProjecthomeComponent } from './projecthome/projecthome.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DeleteQuestionByIdComponent } from './delete-question-by-id/delete-ques
    
     ListallQuestionsComponent,
     GetquestionByIdComponent,
-    DeleteQuestionByIdComponent
+    DeleteQuestionByIdComponent,
+    ProjecthomeComponent
   ],
   imports: [
     BrowserModule,

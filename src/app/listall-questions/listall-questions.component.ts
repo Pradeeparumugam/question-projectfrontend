@@ -24,6 +24,28 @@ export class ListallQuestionsComponent {
     );
 
    }
-
-
+   
 }
+/*removeQuestion(id:number){
+    let observable=this.questionService.deleteQuestionById(id);
+    observable.subscribe(
+      res=>{
+       this.removeLocalElement(id);
+      },
+      err=>{
+        console.log("inside removequestion, err is "+err.message);
+      }
+    );
+     }
+   
+     removeLocalElement(id:number):void{
+       console.log("before user removed,length="+this.questions.length); 
+       for(let i=0 ;i<this.questions.length;i++ ){
+          let question=this.questions[i];
+           if(question.questionId===id){
+               //index and number of elements to remove
+               this.questions.splice(i,1);
+           }
+        }
+          
+   }*/

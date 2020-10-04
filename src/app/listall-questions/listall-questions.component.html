@@ -3,6 +3,7 @@
 <table border="1">
 
 <tr>
+  <th>Id</th>
   <th>OPTIONS</th>
   <th>TITLE</th>
  <th>QANSWER</th>
@@ -13,6 +14,7 @@
 
 <tr *ngFor="let question of questions;" >
 
+  <td>{{question.questionId}}</td>
   <td>
     
     {{question.questionOptions}}

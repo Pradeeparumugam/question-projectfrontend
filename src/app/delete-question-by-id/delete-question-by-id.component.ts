@@ -1,31 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionService } from '../service/questionService';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-delete-question-by-id',
   templateUrl: './delete-question-by-id.component.html',
   styleUrls: ['./delete-question-by-id.component.css']
 })
-export class DeleteQuestionByIdComponent implements OnInit {
-  questionService:QuestionService;
-  constructor() { }
+export class DeleteQuestionByIdComponent  {
+  id:number;
+  constructor(private route:ActivatedRoute,private questionService:QuestionService) { 
+    /*let observable =route.paramMap;//param map is the property in activated route
+   observable.subscribe((params:ParamMap)=>{
+    let idVal:string =params.get("id");
+    let idNum:number=Number(idVal);//converting string to number
+    console.log("id available is "+idNum);
+    this.deleteQuestion(idNum);
+   })*/
+   }
 
-  ngOnInit(): void {
-  }
-  deleteQuestionById(form:any):void{
-    let data=form.value;
-    let id=form.questionId;
-    let observable=this.questionService.deleteQuestionById(id);
+deleteQuestion(id:number){
+  console.log("the deleted question id is" +id);
+  let observable=this.questionService.deleteQuestionById(id);
     observable.subscribe(
       questionArg=>{
-        this.deletedIdIs(id);
+        console.log("deleted question Id id"+id);
       },
       err =>{
         console.log("error in delete qustion by id"+err.message);
       }
     );
-  }
-deletedIdIs(id:number){
-  console.log("the deleted question id is" +id);
+}
+deleteQuestionById(form:any){
+  let data=form.value;
+  let id=data.questionId;
+  this.deleteQuestion(id);  
 }
 }
