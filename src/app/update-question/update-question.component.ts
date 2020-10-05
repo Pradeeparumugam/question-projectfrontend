@@ -3,19 +3,19 @@ import { Question } from '../class/question';
 import { Observable } from 'rxjs';
 import { QuestionService } from '../service/questionService';
 
-
 @Component({
-  selector: 'app-projecthome',
-  templateUrl: './projecthome.component.html',
-  styleUrls: ['./projecthome.component.css']
+  selector: 'app-update-question',
+  templateUrl: './update-question.component.html',
+  styleUrls: ['./update-question.component.css']
 })
-export class ProjecthomeComponent implements OnInit {
-  private questionService:QuestionService;
-  constructor() { }
+export class UpdateQuestionComponent implements OnInit {
+
+ 
+  constructor( private questionService:QuestionService) { }
 
   ngOnInit(): void {
   }
-  /*question:Question;
+  question:Question;
   updateQuestion(form:any){
     let data=form.value;
     let questionId=data.questionId;
@@ -27,6 +27,7 @@ export class ProjecthomeComponent implements OnInit {
     let marksScored=data.marksScored;
     this.question=new Question(questionId,questionOptions, questionTitle,questionAnswer,
       questionMarks,chosenAnswer,marksScored);
+      let observable:Observable<Question>=this.questionService.updateQuestion(this.question);
       let successFun = (questionArg: Question) => {
         this.question= questionArg;
       };
@@ -35,9 +36,9 @@ export class ProjecthomeComponent implements OnInit {
         console.log("err in updatequestioncomponent " + err.message);
       }
   
-      let observable: Observable<Question> = this.questionService.updateQuestion(this.question);
+      
       observable.subscribe(successFun, errFun);
     }
 
-*/
+
 }

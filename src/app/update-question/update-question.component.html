@@ -1,0 +1,35 @@
+
+<form #updateQuestionForm=ngForm (ngSubmit)=updateQuestion(updateQuestionForm)>
+    <div>
+        <label>Question Id</label>
+        <input type="number" name="questionId" ngModel>
+    </div>
+    <div>
+        <label>Question Options</label>
+        <input type="text" name="questionOptions" ngModel>
+    </div>
+    <div>
+        <label>Question Title</label>
+        <input type="text" name="questionTitle" ngModel>
+    </div>
+    <div>
+        <label>Question Answer</label>
+        <input type="number" name="questionAnswer" ngModel>
+    </div>
+    <div>
+        <label>Question Marks</label>
+        <input type="number" name="questionMarks" ngModel>
+    </div>
+    <div>
+        <label>Chosen Answer</label>
+        <input type="number" name="chosenAnswer" ngModel>
+    </div>
+    <div>
+        <label>Marks Scored</label>
+        <input type="number" name="marksScored" ngModel>
+    </div>
+    <input type="submit" value="Submit" >
+</form>
+<br>
+Updated Question is {{question.questionId}}  {{question.questionOptions}} {{question.questionTitle}}
+{{question.questionAnswer}} {{question.questionMarks}} {{question.chosenAnswer}} {{question.marksScored}}

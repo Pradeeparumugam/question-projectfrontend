@@ -17,7 +17,7 @@ export class QuestionService{
         return observable;
         //this.questions.push(question);
     }
-    updateQuestion(question:UpdateQuestion):Observable<Question>{
+    updateQuestion(question:Question):Observable<Question>{
         let url="http://localhost:8686/questions/update";
         let observable:Observable<Question>=this.http.put<Question>(url,question);
         return observable;

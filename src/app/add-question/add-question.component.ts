@@ -29,7 +29,7 @@ export class AddQuestionComponent implements OnInit {
       let questionMarks=data.questionMarks;
       let chosenAnswer=data.chosenAnswer;
       let marksScored=data.marksScored;
-      this.question=new Question(questionOptions, questionTitle,questionAnswer,
+      this.question=new Question(-1,questionOptions, questionTitle,questionAnswer,
         questionMarks,chosenAnswer,marksScored);
         let successFun = (questionArg: Question) => {
           this.question= questionArg;

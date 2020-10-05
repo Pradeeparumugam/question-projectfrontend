@@ -1,5 +1,5 @@
 export class Question{
-      
+      questionId:number;
       questionOptions:String;
 	  questionTitle:String;
 	  questionAnswer:number;
@@ -7,8 +7,9 @@ export class Question{
 	  chosenAnswer:number;
        marksScored:number;
        
-       constructor(questionOptions:String, questionTitle:String,questionAnswer:number,
+       constructor(questionId:number,questionOptions:String, questionTitle:String,questionAnswer:number,
         questionMarks:number,chosenAnswer:number,marksScored:number){
+            this.questionId=questionId;
             this.questionOptions=questionOptions;
             this.questionTitle=questionTitle;
             this.questionAnswer=questionAnswer;
@@ -28,7 +29,9 @@ export class Question{
                 this.marksScored=marksScored;
             }
             */
-        
+        getquestioId(){
+            return this.questionId;
+        }
 
         getquestionOptions(){
             return this.questionOptions;

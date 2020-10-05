@@ -13,13 +13,13 @@ export class GetquestionByIdComponent {
   question:Question;
 
   constructor(private route:ActivatedRoute,private questionService:QuestionService) { 
-   /* let observable =route.paramMap;//param map is the property in activated route
+    let observable =route.paramMap;//param map is the property in activated route
    observable.subscribe((params:ParamMap)=>{
     let idVal:string =params.get("id");
     let idNum:number=Number(idVal);//converting string to number
     console.log("id available is "+idNum);
     this.getQuestion(idNum);
-   })*/
+   })
    }
 
 id:number;
