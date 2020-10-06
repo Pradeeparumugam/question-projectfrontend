@@ -1,0 +1,45 @@
+    <p>listall-questions works!</p>
+<h3>questions List</h3>
+<table border="1">
+
+<tr>
+  <th>Id</th>
+  <th>OPTIONS</th>
+  <th>TITLE</th>
+ <th>QANSWER</th>
+ <th>QMARKS</th>
+ <th>CANSWER</th> 
+ <th>MarksScored</th>
+</tr>  
+
+<tr *ngFor="let question of questions;" >
+
+  <td>{{question.questionId}}</td>
+  <td>
+    
+    {{question.questionOptions}}
+  </td>
+  <td>
+      
+ {{question.questionTitle }} 
+</td>
+
+<td>
+    
+  {{question.questionAnswer}}
+
+</td>
+
+<td>
+  {{question.questionMarks}}
+</td>
+  <td>
+    {{question.chosenAnswer}}
+  </td>  
+  <td>
+    {{question.marksScored}}
+  
+  </td>
+  </tr>
+ 
+</table>

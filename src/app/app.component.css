@@ -1,0 +1,10 @@
+.nav-bar{
+    background-color: #6F2C91;
+    border:3px solid #6F2C91;
+    color: white;
+
+}
+.nav-bar:hover{
+    background-color: white !important;
+    color:black !important;
+}

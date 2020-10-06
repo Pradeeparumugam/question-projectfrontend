@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Question } from '../class/question';
 import { QuestionService } from '../service/questionService';
 import { Observable } from 'rxjs';
+import { FormGroup, FormControl } from '@angular/forms';
+//import { FormBuilder, FormControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-add-question',
@@ -14,10 +17,12 @@ export class AddQuestionComponent implements OnInit {
    /* this.questionService=questionService;
     this.questionService.addquestion(this.question)
     */
+   
    }
 
   ngOnInit(): void {
   }
+
 
   question:Question;
   
@@ -29,6 +34,7 @@ export class AddQuestionComponent implements OnInit {
       let questionMarks=data.questionMarks;
       let chosenAnswer=data.chosenAnswer;
       let marksScored=data.marksScored;
+      console.log(data.questionOptions);
       this.question=new Question(-1,questionOptions, questionTitle,questionAnswer,
         questionMarks,chosenAnswer,marksScored);
         let successFun = (questionArg: Question) => {

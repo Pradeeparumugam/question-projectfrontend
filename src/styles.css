@@ -1,1 +1,63 @@
-/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+* { margin: 0; font-family: 'Roboto Slab', serif; }
+
+
+body{
+  background-image: url("./images/back.jpg");
+  background-repeat: no-repeat;
+  background-size: 100vw 150vh;
+  background-color: rgb(242, 242, 255);
+  
+  
+}
+hr{
+  border-color: darkgray;
+}/* You can add global styles to this file, and also import other style files */
+
+label{
+    font-weight: bold;
+}
+#box{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #e74c3c !important;
+    }
+ 
+    .searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color:#bec0d1;
+    border-radius: 30px;
+    padding: 10px;
+    }
+ 
+    .search_input{
+    color:black;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+    }
+ 
+    .searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 450px;
+    caret-color:red;
+    transition: width 0.4s linear;
+    }
+ 
+    .searchbar:hover > .search_icon{
+    background: white;
+    color: #e74c3c;
+    }
+
+    .error{
+        color: #e74c3c;
+    }
+    

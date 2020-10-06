@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuestionService } from '../service/questionService';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
+
 @Component({
   selector: 'app-delete-question-by-id',
   templateUrl: './delete-question-by-id.component.html',
@@ -21,9 +22,11 @@ export class DeleteQuestionByIdComponent  {
 
 deleteQuestion(id:number){
   console.log("the deleted question id is" +id);
+  this.questionId=id;
   let observable=this.questionService.deleteQuestionById(id);
     observable.subscribe(
       questionArg=>{
+        
         console.log("deleted question Id id"+id);
       },
       err =>{
@@ -31,8 +34,11 @@ deleteQuestion(id:number){
       }
     );
 }
+questionId:number=undefined;
 deleteQuestionById(form:any){
+  
   let data=form.value;
+  console.log(data.questionId)
   let id=data.questionId;
   this.deleteQuestion(id);  
 }

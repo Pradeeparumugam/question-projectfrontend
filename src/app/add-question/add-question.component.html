@@ -1,50 +1,73 @@
-<p>add-question works!</p>
+ <div class="container" >
+    <div class="d-flex justify-content-center">
+        <div class="card text-white bg-secondary mb-3" style="width: 25rem; align-self: center;"  >
+            <h4>ADD QUESTION</h4>
+            <form #addQuestionForm=ngForm (ngSubmit)=addQuestion(addQuestionForm)>
+                    
+                <div class="form-group">
+                    <label style="color: white; font-weight: bold; ">Question Options </label>
+                    <input type="text" name="questionOptions" required minlength="3" placeholder="enter question options" 
+                    #questionOptionsCtrl=ngModel ngModel class="form-control">
+                </div>
+                <div *ngIf="questionOptionsCtrl.errors!==null &&  questionOptionsCtrl.errors.required" class="error">
+                    required field
+                </div>
+                <div *ngIf="questionOptionsCtrl.errors!=null && questionOptionsCtrl.errors.minlength" class="error">
+                    minlength is 3
+                </div>
+            
+                <div class="form-group">
+                    <label style="color: white; font-weight: bold; ">Question Title </label>
+                    <input type="text" name="questionTitle" required minlength="4" placeholder="enter question title" 
+                    #questionTitleCtrl=ngModel  ngModel class="form-control">    
+                </div>
+                <div *ngIf="questionTitleCtrl.errors!==null &&  questionTitleCtrl.errors.required" class="error">
+                    required field
+                </div>
+                <div *ngIf="questionTitleCtrl.errors!=null && questionTitleCtrl.errors.minlength" class="error">
+                    minlength is 4
+                </div>
+            
+                <div class="form-group">
+                    <label style="color: white; font-weight: bold; "> Question Answer</label>
+                    <input type="number" name="questionAnswer"  placeholder="enter question answer" 
+                    #questionAnswerCtrl=ngModel    ngModel class="form-control">    
+                </div>
+                <div *ngIf="questionAnswerCtrl.errors!==null &&  questionAnswerCtrl.errors.required" class="error">
+                    required field
+                </div>
+                <div class="form-group">
+                    <label style="color: white; font-weight: bold; "> Question Marks</label>
+                    <input type="number" name="questionMarks"  placeholder="enter question marks" 
+                     ngModel   class="form-control">   
+                </div>
+            
+                <div class="form-group">
+                    <label style="color: white; font-weight: bold; "> Chosen Answer</label>
+                    <input type="number" name="chosenAnswer"  placeholder="enter choosed answer" 
+                        ngModel    class="form-control">    
+                </div>
+            
+                <div class="form-group">
+                    <label style="color: white; font-weight: bold; "> Marks Scored</label>
+                    <input type="number" name="marksScored"  placeholder="enter marks scored" 
+                        ngModel    class="form-control">
+                </div>
+                
+                    <input type="submit" value="Submit" class="btn btn-success btn-lg ">
+                
+            
+            </form> 
+            <div *ngIf="question!=undefined" class="alert alert-success">
+                <strong>Added Successfully!</strong>
+            </div> 
+        </div>
+    </div>
+</div> 
 
-<form #addQuestionForm=ngForm (ngSubmit)="addQuestion(addQuestionForm)">
-<table style="border:3">
-<tr>
-    <div>
-       <label>Question Options</label> 
-        <input type="text" name="questionOptions" ngModel>   
-    </div>
-</tr>
-<tr>
-    <div>
-        <label>Question Title</label>
-    <input type="text" name="questionTitle" ngModel>    
-    </div>
-</tr>
-<tr>
-    <div>
-        <label>Question Answer</label>
-        <input type="number" name="questionAnswer" ngModel>    
-    </div>
-</tr>
-<tr>
-    <div>
-        <label>Question Marks</label>
-        <input type="number" name="questionMarks" ngModel>    
-    </div>
-</tr>
-<tr>
-    <div>
-        <label>Chosen Answer</label>
-        <input type="number" name="chosenAnswer" ngModel>    
-    </div>
-</tr>
-<tr>
-    <div>
-        <label>Marks Scored</label>
-        <input type="number" name="marksScored" ngModel>    
-    </div>
-</tr>    
-    <input type="submit" value="Submit">   
-</table> 
-    </form>
-    
-    <br>
-    Submitted new Question is {{question.questionOptions}} {{question.questionTitle}} {{question.questionAnswer}} 
-    {{question.questionMarks}}  {{question.chosenAnswer}}    {{question.marksScored}}
+<br>
+        Submitted new Question is {{question.questionOptions}} {{question.questionTitle}} {{question.questionAnswer}} 
+        {{question.questionMarks}}  {{question.chosenAnswer}}    {{question.marksScored}}
     
 
     

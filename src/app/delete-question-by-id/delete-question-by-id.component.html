@@ -1,9 +1,18 @@
-<p>delete-question-by-id works!</p>
-<form #deleteidform=ngForm (ngSubmit)=deleteQuestionById(deleteidform)>
-    <div class="form-group">
-        <label>DeleteQuestion ID</label>
-        <input type="number" name="questionId" ngModel class="form-control">
-    </div>
-<input type="submit" value="Search" class="btn btn-success">
-</form>
-<br>
+<div class="container" >
+    <div class="d-flex justify-content-center pt-5">
+        <div class="card text-white bg-secondary mb-3 col-6" style=" align-self: center">         
+            <h4>DELETE QUESTION</h4>
+            <form #deleteidform=ngForm (ngSubmit)=deleteQuestionById(deleteidform)>
+                <div class="form-group">
+                    <label>Delete Question ID</label>
+                    <input type="number" name="questionId"  placeholder="enter question id" ngModel class="form-control">
+                </div>               
+                <input type="submit" value="DELETE" class="btn btn-danger">
+            
+            </form>
+        </div>
+    </div> 
+</div>
+<div class="text-center">
+    The deleted Question Id is {{id}}
+</div>

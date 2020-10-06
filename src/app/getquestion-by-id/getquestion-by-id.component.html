@@ -1,34 +1,41 @@
-<p>getquestion-by-id works!</p>
-the given question id is {{id}}
-{{name}}
-<!--<form #idform=ngForm (ngSubmit)="getQuestionById(idform)">
-    <div>
-        <label>QuestionID</label>
-        <input type="number" name="questionId" ngModel>
+<div class="container" >
+    <div class="d-flex justify-content-center pt-5">
+        <div class="card text-white bg-secondary mb-3" style=" align-self: center "  >
+            <h4>GET QUESTION</h4> 
+            <form #idform=ngForm (ngSubmit)=getQuestionById(idform) >                          
+                <div class="form-group"> 
+                    <label>Question Id</label>           
+                    <input type="number" name="questionId"  placeholder="Enter question id" ngModel class="form-control col-5">
+                </div>
+                    <input type="submit" value="SEARCH" class="btn btn-success mb-4">
+            </form>         
+                   
+            <table class="table table-info table-bordered table-striped">
+                <thead>
+                    <tr class="text-center">
+                        <th scope="col">Id</th>
+                        <th scope="col">Option</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Question Answer</th>
+                        <th scope="col">Marks total</th>
+                        <th scope="col">Chosen Answer</th>
+                        <th scope="col">Marks Scored</th>               
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table table-light text-center"  *ngIf="question!=undefined">
+                        <td>{{question.questionId}}</td>
+                        <td>{{question.questionOptions}}</td>
+                        <td>{{question.questionTitle}}</td>
+                        <td>{{question.questionAnswer}}</td>
+                        <td>{{question.questionMarks}}</td>
+                        <td>{{question.chosenAnswer}}</td>
+                        <td>{{question.marksScored}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
     </div>
-<input type="submit" value="search">
-</form>
-<br>
--->
-<form #idform=ngForm (ngSubmit)=getQuestionById(idform) >
-
-    <div class="form-group">
-    <label>Question Id</label>
-    <input type="number" name="questionId"   ngModel class="form-control">
-  </div>
-    <input type="submit" value="Search" class="btn btn-success">
-  </form>
-  <br>
-
-
-    <div *ngIf="question!==undefined">
-    Question Id is {{question.questionId}}<br>
-    Question Options are {{question.questionOptions}}<br>
-    Question Title is {{question.questionTitle}}     <br>
-    Question Answer {{question.questionAnswer}}      <br>
-    Question Marks {{question.questionMarks}}        <br>
-    Chosen Answer {{question.chosenAnswer}}          <br>
-    Marks Scored {{question.marksScored}}            <br>
+            
 </div>
-
-<br>

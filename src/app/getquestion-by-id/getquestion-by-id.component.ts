@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Question } from '../class/question';
 import { QuestionService } from '../service/questionService';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-getquestion-by-id',

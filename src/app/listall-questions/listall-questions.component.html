@@ -1,45 +1,33 @@
-    <p>listall-questions works!</p>
-<h3>questions List</h3>
-<table border="1">
-
-<tr>
-  <th>Id</th>
-  <th>OPTIONS</th>
-  <th>TITLE</th>
- <th>QANSWER</th>
- <th>QMARKS</th>
- <th>CANSWER</th> 
- <th>MarksScored</th>
-</tr>  
-
-<tr *ngFor="let question of questions;" >
-
-  <td>{{question.questionId}}</td>
-  <td>
-    
-    {{question.questionOptions}}
-  </td>
-  <td>
+<div class="container" >
+  <div class="d-flex justify-content-center pt-5">
+      <div class="card  mb-3" style=" align-self: center "  >     
+       <h4 class="text-black">QUESTIONS LIST</h4>
+      <table  class="table table-secondary table-borderless table-striped">
+        <thead>
+          <tr class="text-center">
+            <th>Id</th>
+            <th>OPTIONS</th>
+            <th>TITLE</th>
+            <th>QANSWER</th>
+            <th>QMARKS</th>
+            <th>CANSWER</th> 
+            <th>MarksScored</th>
+          </tr>  
+        </thead>        
+        <tbody>
+          <tr *ngFor="let question of questions;" class="text-center">
+            <td>{{question.questionId}}</td>
+            <td>{{question.questionOptions}}</td>
+            <td>{{question.questionTitle }} </td>
+            <td>{{question.questionAnswer}}</td>   
+            <td>{{question.questionMarks}}</td>
+            <td>{{question.chosenAnswer}}</td>
+            <td>{{question.marksScored}}</td>
+          </tr>
+        </tbody>
       
- {{question.questionTitle }} 
-</td>
+      </table>
+    </div>
+  </div>
+</div>
 
-<td>
-    
-  {{question.questionAnswer}}
-
-</td>
-
-<td>
-  {{question.questionMarks}}
-</td>
-  <td>
-    {{question.chosenAnswer}}
-  </td>  
-  <td>
-    {{question.marksScored}}
-  
-  </td>
-  </tr>
- 
-</table>

@@ -1,0 +1,51 @@
+<p>add-question works!</p>
+
+<form #addQuestionForm=ngForm (ngSubmit)="addQuestion(addQuestionForm)">
+<table border="3">
+<tr>
+    <div>
+       <label>Question Options</label> 
+        <input type="text" name="questionOptions" ngModel>   
+    </div>
+</tr>
+<tr>
+    <div>
+        <label>Question Title</label>
+    <input type="text" name="questionTitle" ngModel>    
+    </div>
+</tr>
+<tr>
+    <div>
+        <label>Question Answer</label>
+        <input type="number" name="questionAnswer" ngModel>    
+    </div>
+</tr>
+<tr>
+    <div>
+        <label>Question Marks</label>
+        <input type="number" name="questionMarks" ngModel>    
+    </div>
+</tr>
+<tr>
+    <div>
+        <label>Chosen Answer</label>
+        <input type="number" name="chosenAnswer" ngModel>    
+    </div>
+</tr>
+<tr>
+    <div>
+        <label>Marks Scored</label>
+        <input type="number" name="marksScored" ngModel>    
+    </div>
+</tr>    
+    <input type="submit" value="Submit">   
+</table> 
+    </form>
+    
+    <br>
+    Submitted new Question is {{question.questionOptions}} {{question.questionTitle}} {{question.questionAnswer}} 
+    {{question.questionMarks}}  {{question.chosenAnswer}}    {{question.marksScored}}
+    
+
+    
+    
